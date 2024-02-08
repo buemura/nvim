@@ -5,8 +5,15 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-  },
+  }, 
   config = function()
+    local neotree = require("neo-tree").setup({
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
+    })
     vim.keymap.set('n', '<C-b>', ':Neotree position=left toggle<CR>')
-  end
+  end,
 }
